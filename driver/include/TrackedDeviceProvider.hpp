@@ -1,6 +1,8 @@
 #ifndef TrackedDeviceProvider_h__
 #define TrackedDeviceProvider_h__
 
+#include <LeapConnection.hpp>
+
 #include <openvr_driver.h>
 
 class TrackedDeviceProvider : public vr::IServerTrackedDeviceProvider {
@@ -20,6 +22,7 @@ public:
     void EnterStandby() { }
     void LeaveStandby() { }
 private:
+    LeapConnection m_leap_connection { };
 };
 
 #endif // TrackedDeviceProvider_h__
