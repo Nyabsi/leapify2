@@ -41,9 +41,9 @@ LeapHand LeapConnection::getHand(vr::ETrackedControllerRole role)
 	switch (role)
 	{
 		case vr::TrackedControllerRole_LeftHand:
-			return m_leftHand;
+			return m_left_hand;
 		case vr::TrackedControllerRole_RightHand:
-			return m_rightHand;
+			return m_right_hand;
 		default:
 			break;
 	}
@@ -90,12 +90,12 @@ void LeapConnection::Update()
 					{
 						case eLeapHandType_Left:
 						{
-							m_leftHand.exchange(data);
+							m_left_hand.exchange(data);
 							break;
 						}
 						case eLeapHandType_Right:
 						{
-							m_rightHand.exchange(data);
+							m_right_hand.exchange(data);
 							break;
 						}
 						default:

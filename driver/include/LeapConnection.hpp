@@ -20,9 +20,9 @@ private:
 	LEAP_CONNECTION m_connection { nullptr };
 	std::atomic<bool> m_running { false };
 	std::thread m_thread { };
-	std::atomic<int64_t> m_tracking_frame_id;
-	std::atomic<LeapHand> m_leftHand { };
-	std::atomic<LeapHand> m_rightHand { };
+	std::atomic<int64_t> m_tracking_frame_id { };
+	std::atomic<LeapHand> m_left_hand { };
+	std::atomic<LeapHand> m_right_hand { };
 };
 
 #endif // LeapConnection_h__
