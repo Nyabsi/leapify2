@@ -1,0 +1,148 @@
+[
+    {
+        "title": "#{leapify}Settings_Title",
+        "show_without_hmd": true,
+
+        "values": [
+            {
+                "name": "/settings/driver_leapify/trackingEnabled",
+                "control": "toggle",
+                "label": "#{leapify}Setting_hand_tracking",
+                "on_label": "#{leapify}Setting_toggle_on",
+                "off_label": "#{leapify}Setting_toggle_off",
+                "requires": {}
+            },
+
+            {
+                "name": "/settings/driver_leapify/trackingFallback",
+                "control": "toggle",
+                "label": "#{leapify}Setting_tracking_fallback",
+                "on_label": "#{leapify}Setting_toggle_on",
+                "off_label": "#{leapify}Setting_toggle_off",
+                "requires": {}
+            },
+
+            {
+                "name": "/settings/driver_leapify/trackingExternal",
+                "control": "toggle",
+                "label": "#{leapify}Setting_external_tracking",
+                "on_label": "#{leapify}Setting_toggle_on",
+                "off_label": "#{leapify}Setting_toggle_off",
+                "requires": {}
+            },
+
+            {
+                "name": "/settings/driver_leapify/trackingPassthroughPosition",
+                "control": "toggle",
+                "advanced_only": true,
+                "label": "#{leapify}Setting_position_passthrough",
+                "on_label": "#{leapify}Setting_toggle_on",
+                "off_label": "#{leapify}Setting_toggle_off",
+                "requires": {}
+            },
+
+            {
+                "name": "/settings/driver_leapify/trackingPassthroughSkeletal",
+                "control": "toggle",
+                "advanced_only": true,
+                "label": "#{leapify}Setting_skeletal_passthrough",
+                "on_label": "#{leapify}Setting_toggle_on",
+                "off_label": "#{leapify}Setting_toggle_off",
+                "requires": {}
+            },
+
+            {
+                "name": "/settings/driver_leapify/trackingAutomaticHandOffset",
+                "control": "toggle",
+                "label": "#{leapify}Setting_automatic_offset",
+                "on_label": "#{leapify}Setting_toggle_on",
+                "off_label": "#{leapify}Setting_toggle_off",
+                "requires": {}
+            },
+
+            {
+                "name": "/settings/driver_leapify/trackingHandOffset",
+                "control": "slider",
+                "label": "#{leapify}Setting_manual_offset",
+                "type": "float",
+                "min": -500,
+                "max": 500,
+                "decimals": 1,
+                "requires": {
+                    "/settings/driver_leapify/trackingAutomaticHandOffset": false
+                }
+            },
+
+            {
+                "name": "/settings/driver_leapify/trackingGestureInput",
+                "control": "toggle",
+                "label": "#{leapify}Setting_gesture_input",
+                "on_label": "#{leapify}Setting_toggle_on",
+                "off_label": "#{leapify}Setting_toggle_off",
+                "requires": {}
+            },
+
+            {
+                "name": "/settings/driver_leapify/trackingGestureInputSensitivity",
+                "control": "slider",
+                "label": "#{leapify}Setting_gesture_sensitivity",
+                "type": "float",
+                "min": -500,
+                "max": 500,
+                "decimals": 1,
+                "requires": {
+                    "/settings/driver_leapify/trackingGestureInput": true
+                }
+            },
+
+            {
+                "name": "/settings/driver_leapify/trackingMountingAdjust",
+                "control": "toggle",
+                "advanced_only": true,
+                "label": "#{leapify}Setting_mounting_adjust",
+                "on_label": "#{leapify}Setting_toggle_on",
+                "off_label": "#{leapify}Setting_toggle_off",
+                "requires": {}
+            },
+
+            {
+                "name": "/settings/driver_leapify/trackingMountingAdjustOffsetX",
+                "control": "slider",
+                "label": "#{leapify}Setting_slider_offset_x",
+                "type": "float",
+                "min": -500,
+                "max": 500,
+                "decimals": 1,
+                "requires": {
+                    "/settings/driver_leapify/trackingMountingAdjust": true
+                }
+            },
+
+            {
+                "name": "/settings/driver_leapify/trackingMountingAdjustOffsetY",
+                "control": "slider",
+                "label": "#{leapify}Setting_slider_offset_y",
+                "type": "float",
+                "min": -500,
+                "max": 500,
+                "decimals": 1,
+                "requires": {
+                    "/settings/driver_leapify/trackingMountingAdjust": true
+                }
+            },
+
+            {
+                "name": "/settings/driver_leapify/trackingMountingAdjustOffsetZ",
+                "control": "slider",
+                "label": "#{leapify}Setting_slider_offset_z",
+                "type": "float",
+                "min": -500,
+                "max": 500,
+                "decimals": 1,
+                "requires": {
+                    "/settings/driver_leapify/trackingMountingAdjust": true
+                }
+            }
+        ]
+    }
+]

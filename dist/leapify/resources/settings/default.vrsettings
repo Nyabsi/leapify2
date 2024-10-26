@@ -2,7 +2,21 @@
     "driver_leapify": 
     {
         "enable": true,
-        "loadPriority": 1,
-        "blocked_by_safe_mode": false
+        "loadPriority": 10,
+        "blocked_by_safe_mode": false,
+
+        "trackingEnabled": true,
+        "trackingFallback": true,
+        "trackingExternal": false,
+        "trackingPassthroughPosition": false,
+        "trackingPassthroughSkeletal": false,
+        "trackingAutomaticHandOffset": false,
+        "trackingHandOffset": 0.0,
+        "trackingGestureInput": false,
+        "trackingGestureInputSensitivity": 0.0,
+        "trackingMountingAdjust": false,
+        "trackingMountingAdjustOffsetX": 0.0,
+        "trackingMountingAdjustOffsetY": 0.0,
+        "trackingMountingAdjustOffsetZ": 0.0
     }
 }

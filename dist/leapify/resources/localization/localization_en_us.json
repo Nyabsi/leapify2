@@ -1,0 +1,20 @@
+{
+    "language_tag": "en_US",
+    
+    "Settings_Title": "Leapify",
+    "Setting_toggle_on": "Enabled",
+    "Setting_toggle_off": "Disabled",
+    "Setting_hand_tracking": "Hand Tracking",
+    "Setting_tracking_fallback": "Hand Tracking as Fallback",
+    "Setting_external_tracking": "External Tracking",
+    "Setting_position_passthrough": "Position Passthrough",
+    "Setting_skeletal_passthrough": "Skeletal Passthrough",
+    "Setting_automatic_offset": "Automatic Hand Offset",
+    "Setting_manual_offset": "Manual Offset (mm)",
+    "Setting_gesture_input": "Gesture Input",
+    "Setting_gesture_sensitivity": "Gesture Sensitivity",
+    "Setting_mounting_adjust": "Mounting Adjust",
+    "Setting_slider_offset_x": "Offset X",
+    "Setting_slider_offset_y": "Offset Y",
+    "Setting_slider_offset_z": "Offset Z"
+}
