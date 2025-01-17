@@ -5,17 +5,22 @@
 
 LeapDevice::LeapDevice(vr::ETrackedControllerRole role)
 {
-
+    if (role == vr::TrackedControllerRole_LeftHand)
+        m_serial = "Leap-Serial-left";
+    else 
+        m_serial = "Leap-Serial-Right";
 }
 
 vr::EVRInitError LeapDevice::Activate(uint32_t unObjectId)
 {
+    m_connected.exchange(true);
+
     return vr::VRInitError_None;
 }
 
 void LeapDevice::Deactivate()
 {
-
+    m_connected.exchange(false);
 }
 
 void LeapDevice::EnterStandby()
@@ -45,5 +50,9 @@ void LeapDevice::Tick()
 
 void LeapDevice::Update(LeapHand& hand)
 {
+    if (!m_connected) {
+        vr::VRServerDriverHost()->TrackedDeviceAdded(m_serial.c_str(), vr::TrackedDeviceClass_Controller, this);
+    } else {
 
+    }
 }
