@@ -27,13 +27,9 @@ void LeapConnection::Start()
 void LeapConnection::Stop()
 {
 	m_running.exchange(false);
-
-	// ideally should be only executed during the deconstruction of the driver
-	// wait til the thread is done and join it to the main thread for clean exit
-	while (!m_thread.joinable())
-		std::this_thread::sleep_for(1ms);
-
-	m_thread.join();
+	
+	if (m_thread.joinable())
+		m_thread.join();
 }
 
 LeapHand LeapConnection::getHand(vr::ETrackedControllerRole role)
