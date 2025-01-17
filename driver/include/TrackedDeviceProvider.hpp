@@ -21,6 +21,11 @@ public:
 
     void EnterStandby() { }
     void LeaveStandby() { }
+
+private:
+    void CallbackLeft(LeapHand hand);
+    void CallbackRight(LeapHand hand);
+
 private:
     LeapConnection m_leap_connection { };
 };

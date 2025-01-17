@@ -5,15 +5,16 @@
 
 #include <atomic>
 #include <thread>
+#include <functional>
 
 #include <LeapC.h>
 
 class LeapConnection {
 public:
 	bool Initialize();
+	void SetCallback(vr::ETrackedControllerRole role, std::function<void(LeapHand)> callback);
 	void Start();
 	void Stop();
-	LeapHand getHand(vr::ETrackedControllerRole role);
 private:
 	void Update();
 
@@ -21,8 +22,8 @@ private:
 	std::atomic<bool> m_running { false };
 	std::thread m_thread { };
 	std::atomic<int64_t> m_tracking_frame_id { };
-	std::atomic<LeapHand> m_left_hand { };
-	std::atomic<LeapHand> m_right_hand { };
+	std::function<void(LeapHand)> m_callback_left;
+	std::function<void(LeapHand)> m_callback_right;
 };
 
 #endif // LeapConnection_h__

@@ -1,6 +1,9 @@
 #include <LeapConnection.hpp>
 #include <LeapHand.hpp>
 
+#include <cstring>
+#include <string>
+
 #include <LeapC.h>
 
 using namespace std::chrono_literals;
@@ -14,6 +17,21 @@ bool LeapConnection::Initialize()
 	result = LeapOpenConnection(m_connection);
 
 	return result == eLeapRS::eLeapRS_Success;
+}
+
+void LeapConnection::SetCallback(vr::ETrackedControllerRole role, std::function<void(LeapHand)> callback)
+{
+	switch (role)
+	{
+		case vr::TrackedControllerRole_LeftHand:
+			m_callback_left = callback;
+			break;
+		case vr::TrackedControllerRole_RightHand:
+			m_callback_right = callback;
+			break;
+		default:
+			break;
+	}
 }
 
 void LeapConnection::Start()
@@ -31,19 +49,12 @@ void LeapConnection::Stop()
 	if (m_thread.joinable())
 		m_thread.join();
 }
-
+/*
 LeapHand LeapConnection::getHand(vr::ETrackedControllerRole role)
 {
-	switch (role)
-	{
-		case vr::TrackedControllerRole_LeftHand:
-			return m_left_hand;
-		case vr::TrackedControllerRole_RightHand:
-			return m_right_hand;
-		default:
-			break;
-	}
+	
 }
+*/
 
 void LeapConnection::Update()
 {
@@ -86,12 +97,12 @@ void LeapConnection::Update()
 					{
 						case eLeapHandType_Left:
 						{
-							m_left_hand.exchange(data);
+							m_callback_left(data);
 							break;
 						}
 						case eLeapHandType_Right:
 						{
-							m_right_hand.exchange(data);
+							m_callback_right(data);
 							break;
 						}
 						default:
