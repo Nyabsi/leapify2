@@ -30,10 +30,10 @@ void TrackedDeviceProvider::RunFrame()
 
 void TrackedDeviceProvider::CallbackLeft(LeapHand hand)
 {
-
+	m_hand_left.Update(hand);
 }
 
 void TrackedDeviceProvider::CallbackRight(LeapHand hand)
 {
-
+	m_hand_right.Update(hand);
 }

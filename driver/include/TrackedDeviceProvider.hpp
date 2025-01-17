@@ -2,6 +2,8 @@
 #define TrackedDeviceProvider_h__
 
 #include <LeapConnection.hpp>
+#include <LeapHand.hpp>
+#include <LeapDevice.hpp>
 
 #include <openvr_driver.h>
 
@@ -28,6 +30,8 @@ private:
 
 private:
     LeapConnection m_leap_connection { };
+    LeapDevice m_hand_left { vr::TrackedControllerRole_LeftHand };
+    LeapDevice m_hand_right { vr::TrackedControllerRole_RightHand };
 };
 
 #endif // TrackedDeviceProvider_h__
